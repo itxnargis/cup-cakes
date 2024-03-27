@@ -5,16 +5,38 @@
 }
 
 :root {
-  --pink: #d6beda;
+  --pink: #db52a7;
   --red: #de0e16;
 }
+
 body {
-  background: #5bb79d;
+  background: linear-gradient(
+    to top,
+    pink,
+    rgb(239, 241, 241),
+    rgb(255, 192, 203)
+  );
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.5) 50%
+  );
+  z-index: -1;
 }
 .box {
   position: relative;
@@ -36,6 +58,7 @@ body {
   height: 85px;
   clip-path: polygon(15% 100%, 84% 100%, 100% 0, 0 0);
 }
+
 .topping {
   position: absolute;
   top: 47%;
@@ -159,3 +182,4 @@ body {
     top: 35%;
   }
 }
+
